@@ -58,4 +58,11 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+  SampleApp::Application.routes.draw do
+  resources :users
+  root  'static_pages#home'
+  match '/signup',  to: 'users#new',            via: 'get'
+  .
+  .
+  .
 end
