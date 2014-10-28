@@ -59,6 +59,12 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
   SampleApp::Application.routes.draw do
+    resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+  root  'static_pages#home'
+  match '/signup',  to: 'users#new',            via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
   resources :users
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
