@@ -19,16 +19,17 @@ module UsersHelper
   def signed_in?
     !current_user.nil?
   end
-def current_user?(user)
+  
+  def current_user?(user)
     user == current_user
   end
 
-  def signed_in_user
+   def signed_in_user
     unless signed_in?
       store_location
       redirect_to signin_url, notice: "Please sign in."
     end
-  end
+
   def redirect_back_or(default)
     redirect_to(session[:return_to] || default)
     session.delete(:return_to)
@@ -37,7 +38,6 @@ def current_user?(user)
   def store_location
     session[:return_to] = request.url if request.get?
   end
-end
   
  def sign_out
     current_user.update_attribute(:remember_token,
