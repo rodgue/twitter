@@ -104,7 +104,9 @@ footer ul li {
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
-
+$grayLight:#eaeaea;
+$grayLighter:#eaeaea;
+$blue: blue;
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;

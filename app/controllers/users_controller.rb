@@ -18,9 +18,6 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
-   def edit
-    @user = User.find(params[:id])
-  end
   
   def update
     if @user.update_attributes(user_params)
@@ -37,14 +34,6 @@ class UsersController < ApplicationController
     redirect_to users_url
   end
 
-  def update
-    @user = User.find(params[:id])
-    if @user.update_attributes(user_params)
-      # Handle a successful update.
-    else
-      render 'edit'
-    end
-  end
 
  def create
     @user = User.new(user_params)
